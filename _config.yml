@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "bokyoung89의 블"
+title                    : "bokyoung89"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "bokyoung89"
@@ -110,7 +110,7 @@ analytics:
 author:
   name             : "bokyoung89"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "작가에서 개발자 되기"
+  bio              : "작가에서 개발자가 되려는 미생입니다."
   location         : "Seuol, South Korea"
   email            :
   links:
