@@ -20,7 +20,7 @@ locale                   : "en-US"
 title                    : "bokyoung89"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "bokyoung89"
+name                     : "bokyoung shin"
 description              : "작가에서 개발자가 되려는 미생입니다."
 url                      : "https://bokyoung89.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -108,7 +108,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "bokyoung89"
+  name             : "bokyoung shin"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "작가에서 개발자가 되려는 미생입니다."
   location         : "Seuol, South Korea"
