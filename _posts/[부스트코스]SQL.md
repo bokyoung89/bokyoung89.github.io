@@ -3,8 +3,14 @@ title: "[부스트코스] MySQL Database 생성하기"
 date: 2020-03-24
 categories: 부스트코스
 ---
+# 학습 목표
+1. SQL이 무엇인지 이해한다.  
+2. MySQL에서 Database를 생성할 수 있다.  
+3. MySQL에서 Database를 이용하는 계정을 생성하고, 권한을 부여할 수 있다.  
+4. 생성한 Database에 sample데이터를 추가할 수 있다.  
 
-# SQL이란?
+
+## SQL이란?
 * SQL은 데이터를 보다 쉽게 검색하고 추가, 삭제, 수정 같은 조작을 할 수 있도록 고안된 컴퓨터 언어입니다.
 * 관계형 데이터베이스에서 데이터를 조작하고 쿼리하는 표준 수단입니다.
 * DML(Data Manupulation Language) 데이터를 조작하기 위해 사용합니다. INSERT, DELETE, UPDATE, SELECT 등이 여기에 해당됩니다.
@@ -12,6 +18,7 @@ categories: 부스트코스
 	CREATE, DROP, ALTER 등이 해당합니다.
 * DCL(Data Control Language) : 데이터를 제어하는 언어입니다. 권환을 관리하고, 데이터의 보안, 무결성을 정의합니다. 
 	GRANT, REVOKE 등이 해당됩니다.
+
 
 ## Database 생성하기
 - mysql –uroot  -p	//관리자 계정인 root로 데이터베이스 관리 시스템에 접속
@@ -33,16 +40,19 @@ flush privileges;
 ## 생성한 Database 접속하기
 * mysql –h호스트명(127.0.0.1) –uDB계정명 –p 데이터베이스이름
 
+
 ## MySQL 연결 끊기
 * mysql> QUIT (혹은) mysql> exit
 * Bye라고 나오면 연결 끊기 성공
+
 
 ## sql 버전과 현재 날짜 구하기
 ```
 mysql> SELECT VERSION(), CURRENT_DATE;
 ```
 
-# SQL을 입력하는 도중 취소
+
+## SQL을 입력하는 도중 취소
 ```
 mysql> SELECT
 
@@ -61,6 +71,7 @@ mysql>
 >MySQL은 쿼리에 해당하는 결과의 전체 row를 출력하고 마지막에 전체 row 수와 쿼리실행에 걸린 시간을 표시합니다.  
 >키워드는 대소문자를 구별하지 않습니다.  
 
+
 ## DBMS에 존재하는 데이터베이스 확인하기
 ```
 mysql> show databases;
@@ -73,9 +84,36 @@ mysql> show databases;
 2 rows in set (0.00 sec)
 ```
 
-## 1-8 사용중인 데이터베이스 전환하기
+
+## 사용중인 데이터베이스 전환하기
 ```
 mysql> use mydb;
 ```
+
+
+## 테이블 목록 확인
+```
+mysql> show tables;
+```
+
+
+## SQL 연습을 위한 테이블 생성과 값의 저장
+```
+mysql   -uconnectuser  -p  connectdb   <  examples.sql
+// 테이블 생성
+mysql –uconnectuser -p  connectdb
+// DB 접속
+mysql> show tables
+//DB 테이블 목록 보기
+```
+
+
+## 테이블 구조를 확인하기 위한 DESCRIBE 명령
+```
+mysql> desc EMPLOYEE;
+```
+* table 구조를 확인하기 위해,  DESCRIBE 명령을 사용할 수 있습니다.
+* 짧게 DESC라고 사용해도 됩니다.
+
 
 
