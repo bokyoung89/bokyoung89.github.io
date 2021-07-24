@@ -21,7 +21,7 @@ title                    : "bokyoung89"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "bokyoung shin"
-description              : "작가에서 개발자가 되려는 ."
+description              : "작가에서 개발자가 되려는 미생."
 url                      : "https://bokyoung89.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -260,16 +260,16 @@ whitelist:
 #  type: liquid
 #  path: /tags/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+ jekyll-archives:
+   enabled:
+     - categories
+     - tags
+   layouts:
+     category: archive-taxonomy
+     tag: archive-taxonomy
+   permalinks:
+     category: /categories/:name/
+     tag: /tags/:name/
 
 
 # HTML Compression
