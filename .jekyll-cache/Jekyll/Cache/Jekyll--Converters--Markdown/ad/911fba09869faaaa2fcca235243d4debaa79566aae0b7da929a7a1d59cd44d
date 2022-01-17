@@ -1,9 +1,0 @@
-I"I<h1 id="다형성">다형성</h1>
-<ul>
-  <li>object casting : 형변환</li>
-  <li>virtual method invocation</li>
-  <li>polymorphic argument  (슈퍼클래스를 입력값으로 이용하면 슈퍼클래스, 상속클래스 객체 모두 사용 가능하다.)</li>
-  <li>instanceof</li>
-  <li>heterogeneous collection</li>
-</ul>
-:ET
