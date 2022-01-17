@@ -1,0 +1,173 @@
+I"p<h1 id="공부할-것">공부할 것</h1>
+<p>메소드나 객제지향 개념을 차근차근 내 언어로 숙지할 것. 완벽히 숙지되지 않아서 클래스를 만들다 막히고,<br />
+자꾸 개념을 다시 찾아보게 된다.</p>
+<ul>
+  <li><strong>생활코딩 강의참조</strong></li>
+  <li>메소드와 객제지향 개념</li>
+  <li>클래스와 인스턴스와 객체</li>
+  <li>클래스 멤버와 인스턴스 멤버</li>
+  <li>유효범위</li>
+  <li>객체의 초기화와 생성자</li>
+  <li>접근제어자</li>
+  <li>다형성</li>
+</ul>
+
+<h1 id="배운-것">배운 것</h1>
+<h2 id="메소드">메소드</h2>
+<ul>
+  <li><strong>메소드 = 함수</strong> : 자바에서는 메소드라고 하고, 다른 언어에서는 함수라 부른다.</li>
+  <li>반목문, 조건문, 변수, 상수는 프로그래밍의 가장 중요한 기본 도구이다. <strong>메소드</strong>나 <strong>객체지향</strong>같은 개념들은
+크고 복잡한 프로젝트를 만드는 관리 도구이다.</li>
+</ul>
+
+<h3 id="메소드의-형식">메소드의 형식</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//### main 메소드 ###
+public static void main(String[] args) {
+    numbering();
+}
+</code></pre></div></div>
+
+<h3 id="메소드의-정의와-호출">메소드의 정의와 호출</h3>
+<ul>
+  <li>메소드를 만드는 것이 <strong>정의</strong>, 만들어진 메소드를 실행하는 것이 <strong>호출</strong></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//### 메소드의 정의 ###
+public static void numbering() {
+  int i = 0;
+  while (i &lt; 10) {
+    System.out.println(i);
+    i++;
+  }
+}
+
+//### 메소드의 호출 ###
+public static void main(String[] args) {
+        numbering();
+      }
+
+</code></pre></div></div>
+<ul>
+  <li>위 예제는 numbering이라는 이름의 메소드를 정의하고 있다. 이 메소드는 main이라는 이름의 메소드 안에서
+호출되고 있다. 메소드 numbering의 로직이 필요할 때 numbering();이라고 하면 메소드 numbering 로직이 실행된다.</li>
+</ul>
+
+<h3 id="main">main</h3>
+<ul>
+  <li>실행하고자하는 프로그램(로직)은 반드시 public static void main(String[] args)가 이끄는 중괄호 안에 위치시켜야 한다.</li>
+</ul>
+
+<h3 id="메소드가-없다면">메소드가 없다면</h3>
+<ul>
+  <li>메소드가 있으면 이미 정의된 로직을 <strong>재활용</strong>할 수 있다. (코드량 ↓ 유지보수 ↑)</li>
+</ul>
+
+<h3 id="입력과-출력">입력과 출력</h3>
+<ul>
+  <li>위에 살펴본 numbering이라는 메소드는 항상 똑같은 동작만을 반복한다. 재활용성으론 좋지만, 입력값에 따라 출력값을 달리 제공하면 더욱 쓸모있는 프로그램이 될 수 있다.</li>
+</ul>
+
+<h4 id="1-1-입력---매개변수와-인자">1-1. 입력 - 매개변수와 인자</h4>
+<ul>
+  <li>프로그래밍을 만들 땐 가변적인 것과 고정적인 것을 구분해야한다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//### 고정적인 메소드 ###
+public static void numbering(int limit) {
+        int i = 0;
+        while (i &lt; limit) {
+            System.out.println(i);
+            i++;
+        }
+    }
+ 
+ // ## 가변적인 메소드 ###
+    public static void main(String[] args) {
+        numbering(5);
+    }
+</code></pre></div></div>
+
+<ul>
+  <li>결과는 0부터 4까지 출력된다.즉, 입력을 통해 메소드의 동작을 제어하고 있다.</li>
+  <li>입력을 위한 두 가지 도구. <strong>매개변수(parameter)</strong> : 입력값을 수용하기 위한 변수가 정의된 부분. <strong>인자(argument)</strong> : 메소드를 호출할 때 전달된 값. 보통은 구분하지 않고 혼용해서 쓴다.</li>
+</ul>
+
+<h4 id="1-2-입력---복수의-인자">1-2. 입력 - 복수의 인자</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static void numbering() {
+    int limit = 5;
+    int i = 0;
+    while (i &lt; limit) {
+        System.out.println(i);
+        i++;
+    }
+}
+</code></pre></div></div>
+
+<ul>
+  <li>복수의 인자값을 갖고 싶다면 인자와 인자 사이를 콤마로 구분하고, 메소드를 정의할 때는 인자를 받을 매개 변수의 순서도 인자가 전달된 순서에 따라 배치함.</li>
+</ul>
+
+<h4 id="1-3-출력---return">1-3. 출력 - return</h4>
+<ul>
+  <li>메소드 밖으로 돌려준다는 뜻. return은 뒤에 따라오는 값을 메소드 결과로 반환한다.</li>
+  <li>반드시 return을 통해서 반환할 값의 데이터 형식을 메소드의 이름 옆에 명시해야한다.</li>
+  <li><strong>메소드를 읽는 Tip</strong> : 메소드의 사용 방법을 먼저 보고 전체적인 맥락을 파악한다. 입력과 출력값을 보면 어떤 용도인지 유추할 수 있다. 그리고나서 정의부를 본다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private static String numbering(int init, int limit) {
+		int i = init;
+		// 만들어지는 숫자들을 output이라는 변수에 담기 위해서 변수에 빈 값을 주었다.
+		String output = "";
+		while(i &lt;limit) {	
+			 // 숫자를 화면에 출력하는 대신 변수 output에 담았다.
+			output += i;
+			i++;
+		}
+		// 중요!!! output에 담겨 있는 문자열을 메소드 외부로 반환하려면 아래와 같이 return 키워드 뒤에 반환하려는 값을 배치하면 된다.
+		return output;
+	}
+	
+	public static void main(String[] args) {
+		// 메소드 numbering이 리턴한 값이 변수 result에 담긴다.
+		String result = numbering(1,5);
+		// 변수 result의 값을 화면에 출력한다.
+		System.out.println(result);
+	}
+</code></pre></div></div>
+
+<ul>
+  <li>return은 장단점이 있다. 까다롭고 코드량이 늘어날 수 있는 반면, 메소드가 리턴할 값을 명시함으로서 예측가능성을 높여준다. 장단점을 잘 파악해두면 적합한 프로그래밍을 할 수 있다.</li>
+</ul>
+
+<h4 id="1-4-왜-굳이-return을-쓰는가">1-4. 왜 굳이 return을 쓰는가?</h4>
+<ul>
+  <li>결론적으로 <strong>부품으로서 가치</strong>를 높이기 위해서이다.</li>
+  <li>숫자 프로그램이 있다면, 숫자를 출력하고 파일에 기록하고 이메일을 보내는 작업으로부터 숫자를 계산하는 로직을 분리하면 된다. 즉, 정의와 호출 역할을 명확히 분리할 수 있다.</li>
+  <li>부품처럼 누구든 어디든 쓰일 수 있다. 초기값과 마지막 값을 입력받고 반환만 하면 된다.</li>
+  <li><strong>return의 특성</strong> : 메소드를 중단시키는 역할.</li>
+</ul>
+
+<h4 id="1-5-출력---복수의-return">1-5. 출력 - 복수의 return</h4>
+<ul>
+  <li>메소드는 여러 개의 값을 가질 수 있는데, 여러 개의 값도 출력할 수 있다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private static String[] getMembers() {
+		String[] members = {"최진혁", "최유빈", "한아람"};
+		return members;
+	}
+	
+	public static void main(String[] args) {
+		String[] members = getMembers();
+	}
+</code></pre></div></div>
+
+<ul>
+  <li><strong>배열</strong>을 이용하면 된다. 메소드 getMembers가 리턴한 배열을 members 변수에 담았다. 여러 개의 인자를 콤마로 구분하지 않고도, 이 변수를 이용해 여러 개의 데이터 처리를 할 수 있다.</li>
+</ul>
+
+<h2 id="클래스-형변환">클래스 형변환</h2>
+<h2 id="참조">참조</h2>
+:ET

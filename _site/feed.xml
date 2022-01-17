@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-17T13:06:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bokyoung89</title><subtitle>작가에서 개발자가 되려는 미생.</subtitle><author><name>bokyoung shin</name></author><entry><title type="html">TIL-21-11-16</title><link href="http://localhost:4000/til/1116/" rel="alternate" type="text/html" title="TIL-21-11-16" /><published>2021-11-16T00:00:00+09:00</published><updated>2021-11-16T00:00:00+09:00</updated><id>http://localhost:4000/til/1116</id><content type="html" xml:base="http://localhost:4000/til/1116/"><![CDATA[<h4 id="주요업무">주요업무</h4>
+<ul>
+  <li>자바 Spring 기반 Restful API 백엔드 서버 설계 및 개발/유지보수</li>
+  <li>성능 개선 &amp; 리팩토링</li>
+  <li>서버 모니터링 &amp; 장애 대응</li>
+</ul>
+
+<h4 id="자격요건">자격요건</h4>
+<ul>
+  <li>2년차 이상의 개발 경력 또는 그에 준하는 개발 실력(언어 무관)</li>
+  <li>웹 서비스에 대한 이해</li>
+  <li>RDB, NoSQL 등 데이터베이스에 대한 이해와 사용 경험</li>
+  <li>Git에 대한 이해<img src="D:\bokyoung89.github\bokyoung89.github.io\images\2021-11-16-1116\도면-16423312826371.jpg" alt="도면" /></li>
+</ul>
+
+<h4 id="우대사항">우대사항</h4>
+<ul>
+  <li>다양한 AWS 서비스 사용 경험</li>
+  <li>Typescript 또는 Node.js 사용 경험</li>
+  <li>Nest.js 등의 framework 사용 경험</li>
+  <li>GraphQL, Rest API 설계 경험</li>
+  <li>대용량 DB 설계 경험</li>
+  <li>웹 크롤러 개발 경험</li>
+  <li>ELK 사용 경험</li>
+  <li>Kafka, SQS 등 MQ 사용 경험</li>
+  <li>테스트 자동화 또는 TDD 경험</li>
+  <li>NoSQL 등을 이용한 대용량 데이터 처리 경험이 있으신 분</li>
+</ul>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><category term="백엔드" /><summary type="html"><![CDATA[주요업무 자바 Spring 기반 Restful API 백엔드 서버 설계 및 개발/유지보수 성능 개선 &amp; 리팩토링 서버 모니터링 &amp; 장애 대응]]></summary></entry><entry><title type="html">TIL-21-02-04</title><link href="http://localhost:4000/til/0204/" rel="alternate" type="text/html" title="TIL-21-02-04" /><published>2021-02-04T00:00:00+09:00</published><updated>2021-02-04T00:00:00+09:00</updated><id>http://localhost:4000/til/0204</id><content type="html" xml:base="http://localhost:4000/til/0204/"><![CDATA[<h2 id="람다식이-ie-지원-안-되는-문제">람다식이 ie 지원 안 되는 문제</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 일반함수</span>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.visual-group .swiper-button-autoplay &gt; button</span><span class="dl">"</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+<span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+
+<span class="c1">//화살표함수(arrow-function)</span>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.news-type03 .swiper-button-autoplay &gt; button</span><span class="dl">"</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+<span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="1-문제">1) 문제</h4>
+
+<p>스크립트에 IE가 지원하지 않는 람다식(화살표 함수)가 들어가 있어 같은 function 내에 다른 팝업이 동작하지 않았다.</p>
+
+<h4 id="2-원인">2) 원인</h4>
+
+<p>중요한 main 페이지였는데, 모바일 접근성 동작만 확인하고 그에 따라 영향있을 만한 다른 function은 확인하지 않았다.</p>
+
+<p>충분한 테스트없이 동작이 된다고만 해서 반영했다.</p>
+
+<p>안전하지 않게 스크립트를 상단에 선언했다.</p>
+
+<h4 id="3-개선-방법">3) 개선 방법</h4>
+
+<p>반영 전엔 충분히 테스트할 것. 다른 요소에 영향있을법한 기능이 추가된다면 해당 페이지의 모든 요소 기능도 테스트할 것.</p>
+
+<p>추가되는 스크립트 기능은 하단에 배치해서 최소한 기존 기능들은 영향이 없도록 주의할 것.</p>
+
+<p>그리고 ie! 에서 반드시 테스트!</p>
+
+<h4 id="4-프론트html-css-js의-브라우저-지원을-확인하는-사이트">4) 프론트(HTML, CSS, JS)의 브라우저 지원을 확인하는 사이트</h4>
+
+<ul>
+  <li>https://caniuse.com/ciu/comparison</li>
+</ul>
+
+<h2 id="반영-페이지-누락-이미지-경로-잘못-설정-이미지-오타-미확인">반영 페이지 누락, 이미지 경로 잘못 설정, 이미지 오타 미확인</h2>
+
+<h4 id="1-문제-1">1) 문제</h4>
+
+<p>코로나19 정부지원 페이지를 누락했고 이미지 경로도 개발로 잘못 올림. 이미지 오타도 미리 확인하지 못함.</p>
+
+<h4 id="2-원인-1">2) 원인</h4>
+
+<p>퍼블이 준 문구를 그대로 복붙하고, 반영 필요한 페이지들도 사전에 미리 파악해두지 않았다.</p>
+
+<p>처음 하는 작업인데도 내맘대로 간단한 작업이라 판단하고 안일하게 진행했다.</p>
+
+<h4 id="3-개선-방법-1">3) 개선 방법</h4>
+
+<p>어떤 작업도 간단하고 쉬운 건 없다. 중요한 작업이라고 늘 인식하고 작업 전 분석을 철저히 할 것.</p>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><category term="람다식" /><category term="javascript" /><summary type="html"><![CDATA[람다식이 ie 지원 안 되는 문제]]></summary></entry><entry><title type="html">TIL-20-05-10</title><link href="http://localhost:4000/til/0510/" rel="alternate" type="text/html" title="TIL-20-05-10" /><published>2020-05-10T00:00:00+09:00</published><updated>2020-05-10T00:00:00+09:00</updated><id>http://localhost:4000/til/0510</id><content type="html" xml:base="http://localhost:4000/til/0510/"><![CDATA[<h1 id="참조-타입">참조 타입</h1>
+<h2 id="기본-타입과-참조-타입">기본 타입과 참조 타입</h2>
+<ul>
+  <li>기본 타입은 실제 값을 변수에 저장하고, 참조 타입은 객체의 번지 값을 저장한다.</li>
+  <li>변수는 스택 영역에 생성되고, 문자열 리터럴은 힙 영역에 String 객체로 생성된다.</li>
+  <li>참조 타입에는 배열, 열거, 클래스, 인터페이스가 있다.</li>
+</ul>
+
+<h2 id="메모리-사용-영역">메모리 사용 영역</h2>
+<ul>
+  <li>메소드 영역 : 클래스별로 바이트 코드들이 저장되어 있다. (.java –&gt; .class가 로딩된다.)</li>
+  <li>힙 영역 : 클래스로부터 생성된 객체와 배열이 저장</li>
+  <li>JVN 스택 영역 : 프레임이 쌓여서 저장된다. 프레임 안에는 메소드가 호출할 때 사용될 변수들이 있다.<br />
+메소드를 호출할 때마다 프레임이 추가되고, 메소드가 종료되면 해당 프레임이 제거</li>
+</ul>
+
+<h2 id="참조-변수의---연산">참조 변수의 ==, !== 연산</h2>
+<ul>
+  <li>참조 타입 변수 간의 번지를 비교한다. 동일한 객체를 참조하는 지 다른 객체를 참조하는 지 알아볼 때 사용.</li>
+  <li>객체를 비교하는 코드는 일반적으로 if문에서 많이 사용된다.</li>
+</ul>
+
+<h2 id="null과-nullpointerexception">null과 NullPointerException</h2>
+<ul>
+  <li>null : 참조 타입 변수가 객체를 참조하지 않는다는 뜻으로 null값 가질 수 있다.</li>
+  <li>NullPointerException : 참조 타입 변수가 null인 상태에서 존재하지 않는 객체의 데이터나 메소드 사용할 경우 발생.
+해당 참조 변수가 객체를 참조하도록 수정하여 해결</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int[] intArray = null;
+intArray[0] = 10; //NullPointerException
+</code></pre></div></div>
+
+<h2 id="string-타입">String 타입</h2>
+<p><strong>선언 type1 : 문자열 리터럴</strong></p>
+<ul>
+  <li>String 변수에 문자열 리터럴을 대입할 경우, String 객체가 생성되고 변수가 String 객체를 참조</li>
+  <li>문자열 리터럴 동일한 경우 같은 String 객체를 공유</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String name1 = "홍길동";
+String name2 = "홍길동";
+</code></pre></div></div>
+
+<p><strong>선언 type2 : new 연산자 사용</strong></p>
+<ul>
+  <li>객체 생성 연산자로, 힙 영역에 새로운 String 객체를 생성한다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String name1 = new String("홍길동");
+String name2 = new String("홍길동);
+</code></pre></div></div>
+
+<p><strong>문자열 비교</strong></p>
+<ul>
+  <li>== : 번지 비교(x) equals() : 문자열 비교(o)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>boolean result = str1.equals(str2);
+                //원본문자열  //비교문자열
+</code></pre></div></div>
+
+<p><strong>쓰레기 객체</strong></p>
+<ul>
+  <li>String 변수 초기값을 null로 대입. String 변수가 참조하는 객체가 없음을 의미</li>
+  <li>참조를 잃은 String 객체는 쓰레기 수집기를 통해 메모리에서 자동 제거</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String hobby = null;
+String hobby = "여행";
+hobby = null;
+</code></pre></div></div>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><summary type="html"><![CDATA[참조 타입 기본 타입과 참조 타입 기본 타입은 실제 값을 변수에 저장하고, 참조 타입은 객체의 번지 값을 저장한다. 변수는 스택 영역에 생성되고, 문자열 리터럴은 힙 영역에 String 객체로 생성된다. 참조 타입에는 배열, 열거, 클래스, 인터페이스가 있다.]]></summary></entry><entry><title type="html">TIL-20-05-03</title><link href="http://localhost:4000/til/0503/" rel="alternate" type="text/html" title="TIL-20-05-03" /><published>2020-05-03T00:00:00+09:00</published><updated>2020-05-03T00:00:00+09:00</updated><id>http://localhost:4000/til/0503</id><content type="html" xml:base="http://localhost:4000/til/0503/"><![CDATA[<h1 id="알고리즘의-기초">알고리즘의 기초</h1>
+<h2 id="컴퓨터-알고리즘의-정의">컴퓨터 알고리즘의 정의</h2>
+<h4 id="컴퓨터-언어">컴퓨터 언어</h4>
+<ul>
+  <li>컴퓨터와 대화하기 위해 사용하는 언어</li>
+</ul>
+
+<h4 id="컴퓨터-알고리즘">컴퓨터 알고리즘</h4>
+<ul>
+  <li>컴퓨터를 이용하여 주어진 문제를 효율적으로 풀기 위한 방법을 단계별로 기술해놓은 것</li>
+  <li>정렬알고리즘, 해시알고리즘, 최단거리알고리즘</li>
+</ul>
+
+<h4 id="컴퓨터-프로그램">컴퓨터 프로그램</h4>
+<p>컴퓨터가 특정 작업을 수행하기 위해 짜여진 명령의 순서</p>
+
+<h2 id="컴퓨터-알고리즘을-설명하기-위한-4단계">컴퓨터 알고리즘을 설명하기 위한 4단계</h2>
+<h4 id="문제-정의">문제 정의</h4>
+<ul>
+  <li>해결하고자 하는 문제는 무엇인가?</li>
+  <li>입력과 출력의 형태로 정의될 수 있는가?</li>
+  <li>컴퓨터가 수행할 수 있는 형태로 전환이 가능한가?</li>
+</ul>
+
+<h4 id="알고리즘-설명">알고리즘 설명</h4>
+<ul>
+  <li>컴퓨터가 수행해야 할 내용을 하나씩 차례대로 정의한 과정 (정확한 수치 설명)</li>
+</ul>
+
+<h4 id="정확성-증명">정확성 증명</h4>
+<ul>
+  <li>과정대로 수행하면 출력으로 항상 올바른 답을 내보내는가?</li>
+  <li>잘못된 답을 내보내는 경우는 없는가?</li>
+  <li>올바른 출력을 내보내고 정상적으로 종료되는가?</li>
+</ul>
+
+<h4 id="성능-분석">성능 분석</h4>
+<ul>
+  <li>수행연산의 횟수를 비교하는 방식으로 성능을 분석. 횟수를 줄이는 게 좋은 알고리즘의 목표</li>
+  <li>수행 시간 / 사용 공간</li>
+</ul>
+
+<h3 id="컴퓨터-알고리즘의-수행-시간-분석">컴퓨터 알고리즘의 수행 시간 분석</h3>
+<p>1) 가장 기본이 되는 함수를 판별하고, 함수를 몇 번 수행하는가를 성능 분석의 기본
+2) 입력에 따라 수행 횟수 바뀌므로 입력 횟수는 n으로 정한다. 예를 들면 T(n)</p>
+
+<h3 id="성능-분석의-비교-대상">성능 분석의 비교 대상</h3>
+<h4 id="산술-연산">산술 연산</h4>
+<p>add, multiply, exponent, modular</p>
+<h4 id="데이터-입출력">데이터 입출력</h4>
+<p>copy, move, save, load</p>
+<h4 id="제어-연산">제어 연산</h4>
+<p>if, while, register</p>
+
+<h3 id="점근적-표기법">점근적 표기법</h3>
+<h4 id="빅오-표기">빅오 표기</h4>
+<h4 id="오메가-표기">오메가 표기</h4>
+<h4 id="쎄타-표기">쎄타 표기</h4>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><summary type="html"><![CDATA[알고리즘의 기초 컴퓨터 알고리즘의 정의 컴퓨터 언어 컴퓨터와 대화하기 위해 사용하는 언어]]></summary></entry><entry><title type="html">TIL-20-04-29</title><link href="http://localhost:4000/til/0429/" rel="alternate" type="text/html" title="TIL-20-04-29" /><published>2020-04-29T00:00:00+09:00</published><updated>2020-04-29T00:00:00+09:00</updated><id>http://localhost:4000/til/0429</id><content type="html" xml:base="http://localhost:4000/til/0429/"><![CDATA[<h1 id="다형성">다형성</h1>
+<ul>
+  <li>object casting : 형변환</li>
+  <li>virtual method invocation</li>
+  <li>polymorphic argument  (슈퍼클래스를 입력값으로 이용하면 슈퍼클래스, 상속클래스 객체 모두 사용 가능하다.)</li>
+  <li>instanceof</li>
+  <li>heterogeneous collection</li>
+</ul>
+
+<blockquote>
+  <p>클래스의 인스턴스 : object(객체)</p>
+</blockquote>
+
+<h2 id="instanceof">instanceof</h2>
+<ul>
+  <li>상속 관계에 의한 객체가 입력값으로 들어왔을 때 구분을 지어야 한다면 instanceof를 사용해서 어떤 클래스에서 온 건지 구분.</li>
+  <li>상속 관계를 고려해서 써야 함. 무조건 슈퍼클래스가 나오면 처음부터 필터링된다.</li>
+</ul>
+
+<h2 id="heterogeneous-collection--배열">heterogeneous collection ==&gt; 배열</h2>
+<ul>
+  <li>여러 다양한 타입으로 집합이 만들어진다.</li>
+</ul>
+
+<h2 id="반대-개념-homogeneous-colletion">(반대 개념) homogeneous colletion</h2>
+<ul>
+  <li>같은 타입으로 집합이 만들어진다.</li>
+</ul>
+
+<h3 id="용어-정리-">용어 정리 :</h3>
+<ul>
+  <li>변수, variable –&gt; 데이터(싱글)</li>
+  <li>collection –&gt; 데이터 집합 ex) array(배열)</li>
+  <li>데이터 구조(data structure)</li>
+</ul>
+
+<h1 id="final">final</h1>
+<ul>
+  <li>원래 기능을 못하고 만들어진 형태가 마지막인 클래스. 상속 불가.</li>
+  <li>final class : 상속 x</li>
+  <li>final method : override x</li>
+  <li>final variable : 상수</li>
+</ul>
+
+<blockquote>
+  <p>변수 : 데이터가 변할 수 있다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int a = 10;
+a = 20;
+</code></pre></div></div>
+
+<blockquote>
+  <p>상수 : 데이터가 변할 수 없다. 고정값.</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>final int a = 10;
+a = 20; //error 
+</code></pre></div>  </div>
+</blockquote>
+
+<ol>
+  <li>반드시 초기화를 해줘야 함. 클래스에서 setter 지원하지 않는다.</li>
+  <li>변수 선언 시 명시적 초기화. 이미 초기화 됐으므로 생성자에서는 명시할 필요 없음.</li>
+  <li>명시적 초기화 하지 않았다면, 생성자 초기화해야 함.</li>
+</ol>
+
+<h1 id="접근제한자-access-modifier">접근제한자 access modifier</h1>
+<ul>
+  <li>클래스, 클래스 내 변수, 메소드들에 대한 접근을 제한</li>
+</ul>
+
+<h2 id="종류">종류</h2>
+<ul>
+  <li>public : 모든 클래스에서 접근 가능</li>
+  <li>protected : 상속받은 객체 어디에서나 접근 가능. 상속관계가 없어도 같은 패키지면 접근 가능. (defalut + 상속)</li>
+  <li>default : 같은 패키지 내에서만 접근 가능. 접근 제한자 지정하지 않을 때  default</li>
+  <li>private : 같은 클래스 내에서만 접근 가능</li>
+</ul>
+
+<h1 id="abstract-class-추상클래스">abstract class 추상클래스</h1>
+<ol>
+  <li>객체가 가지는 특성을 추상화, 하위 클래스에서 구현을 목적으로 정의함.</li>
+  <li>표준화 역할. 상속을 목적으로 동일한 기능 및 속성을 가진다.</li>
+  <li>객체 만들 수 없고 상속을 통해서만 구현 가능.</li>
+</ol>
+
+<h1 id="abstract-method-추상메소드">abstract method 추상메소드</h1>
+<ol>
+  <li>추상메소드가 하나라도 있으면 일반클래스는 추상클래스가 된다.</li>
+  <li>추상 메소드는 구현부{ }가 없고 이름만 호출하고 끝난다.</li>
+</ol>
+
+<h1 id="inferface">inferface</h1>
+<ol>
+  <li>인터페이스는 추상클래스의 일종</li>
+  <li>인터페이스는 순수한 설계만을 표현하기 위해 동작에 대한 명세(가이드/표준화)만 기술.</li>
+  <li>인터페이스 내 메소드는 추상 메소드 (코딩하지 않아도 자동으로 추상클래스로 처리)</li>
+  <li>추상 메소드를 포함하므로 객체 생성 불가</li>
+  <li>인터페이스 내 멤버(변수)는 public static final(어디서든 클래스 이름으로 호출 가능한 상수)</li>
+  <li>implements를 이용해 모든 추상메소드 구현</li>
+</ol>
+
+<h4 id="의문-기능은-똑같은데-왜-두-가지로-나눴을까-언제-쓸까">의문) 기능은 똑같은데 왜 두 가지로 나눴을까? 언제 쓸까?</h4>
+
+<h2 id="다중-상속">다중 상속</h2>
+<ul>
+  <li>단일 상속, 다중 구현의 형태</li>
+  <li>메인 클래스를 하나 상속받고, 필요한 기능은 인터페이스 여러 개로 정리한다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public PassengerAndTruck extends Car
+			implements PassangerModel, TruckModel
+</code></pre></div></div>
+
+<h3 id="추상클래스-vs-인터페이스">추상클래스 vs 인터페이스</h3>
+<ol>
+  <li>추상클래스는 일반 메소드, 일반 변수 선언이 가능하므로 구현부가 넓다.</li>
+  <li>인터페이스 모든 메소드는 추상메소드이고, 변수도 무조건 상수. 구현 메소드 없다.</li>
+</ol>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><summary type="html"><![CDATA[다형성 object casting : 형변환 virtual method invocation polymorphic argument (슈퍼클래스를 입력값으로 이용하면 슈퍼클래스, 상속클래스 객체 모두 사용 가능하다.) instanceof heterogeneous collection]]></summary></entry><entry><title type="html">TIL-20-04-26</title><link href="http://localhost:4000/til/0426/" rel="alternate" type="text/html" title="TIL-20-04-26" /><published>2020-04-26T00:00:00+09:00</published><updated>2020-04-26T00:00:00+09:00</updated><id>http://localhost:4000/til/0426</id><content type="html" xml:base="http://localhost:4000/til/0426/"><![CDATA[<h1 id="객체-지향-프로그래밍">객체 지향 프로그래밍</h1>
+<ul>
+  <li>레고 블럭처럼 조립해서 하나의 프로그램을 만드는 것.</li>
+  <li>쉽게 말하면, 객체는 여러 목적을 가진 <strong>로직(변수와 메소드)</strong> 를 그룹핑한 것. 따라서 다른 곳에도 활용 가능해진다.(재활용성 ↑)</li>
+</ul>
+
+<h2 id="문법과-설계">문법과 설계</h2>
+<h3 id="설계">설계</h3>
+<ul>
+  <li>현실을 소프트웨어화 시켜서 문제를 해결하는 것.</li>
+  <li><strong>추상화(abstract)</strong> : 복잡한 현실에서 우리가 필요하는 관심사를 추출하여 단순화시키는 행위.</li>
+  <li>좋은 설계는 지식을 넘어 지혜의 영역이다. 일단은 지식을 익히자. 어떻게 동작하는지 충분히 이해하는 것이 우선이다.</li>
+</ul>
+
+<h3 id="부품화">부품화</h3>
+<ul>
+  <li><strong>좋은 객체를 만드는 것</strong> = 로직을 재활용 가능하도록 부품화하는 것. 부품화에는 정답이 없고 적절한 방법을 찾아야 함.</li>
+  <li>메소드의 기본 취지는 연관된 로직을 결합해서 메소드라는 완제품을 만드는 것. 프로그램이 커지면서 메소드와 변수를 관리하기 어려워졌고,
+그것을 도약한 것이 <strong>객체 지향 프로그래밍</strong>이다.</li>
+  <li>연관된 메소드와 그 메소드가 사용하는 변수들을 분류하고 그룹핑 즉, 부품화하는 것. 이렇게 그룹핑한 대상이 <strong>객체</strong>이다.</li>
+</ul>
+
+<h3 id="은닉화-캡슐화">은닉화, 캡슐화</h3>
+<ul>
+  <li>제대로된 부품이라면 그것이 어떻게 만들어졌는지 몰라도 쓸 수 있어야 함.</li>
+  <li>내부의 동작 방법을 단단한 케이스(객체) 안에 <strong>숨기고</strong> 사용자에게는 부품의 사용 방법(메소드)만을 <strong>노출</strong>하는 것.</li>
+</ul>
+
+<h3 id="인터페이스">인터페이스</h3>
+<ul>
+  <li>잘 만들어진 부품은 부품과 부품을 서로 교환할 수 있어야 함. 즉, <strong>표준화</strong> 되어 있어야 함. 이러한 규격(연결점)을 <strong>인터페이스</strong>라고 함.</li>
+</ul>
+
+<h1 id="클래스와-인스턴스-그리고-객체">클래스와 인스턴스 그리고 객체</h1>
+<ul>
+  <li>클래스는 객체를 만들기 위한 설계도, 인스턴스는 설계도에 따라 만들어진 구체적인 제품. 굳이 비유하자면 클래스는 정의, 인스턴스는 호출.</li>
+  <li>변수로 상징되는 데이터와 연산으로 상징되는 메소드를 어떻게 그룹핑할까? 이런 맥락에서 탄생한 개념이 객체지향 프로그래밍</li>
+</ul>
+
+<h2 id="객체화">객체화</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Calculator{
+    int left, right;
+      
+    public void setOprands(int left, int right){
+        this.left = left;
+        this.right = right;
+    }
+      
+    public void sum(){
+        System.out.println(this.left+this.right);
+    }
+      
+    public void avg(){
+        System.out.println((this.left+this.right)/2);
+    }
+}
+  
+public class CalculatorDemo4 {
+      
+    public static void main(String[] args) {
+          
+        Calculator c1 = new Calculator();
+        c1.setOprands(10, 20);
+        c1.sum();       
+        c1.avg();       
+          
+        Calculator c2 = new Calculator();
+        c2.setOprands(20, 40);
+        c2.sum();       
+        c2.avg();
+    }
+  
+}
+</code></pre></div></div>
+
+<ul>
+  <li>객체 : 하나의 독립된 프로그램. 변수와 메소드의 집합. 프로그램 안에 있는 작은 프로그램.</li>
+  <li>this : 구체적인 인스턴스, 클래스에서 선언된 변수를 가리킴.</li>
+</ul>
+
+<h3 id="클래스">클래스</h3>
+<ul>
+  <li>위의 변수 left와 right, 메소드 sum과 avg는 계산을 하기 위해 연관된 로직이므로 Calculator라는 이름으로 그룹핑한다.</li>
+  <li>클래스는 연관되어 있는 변수와 메소드의 집합이다.</li>
+</ul>
+
+<h3 id="인스턴스">인스턴스</h3>
+<ul>
+  <li>new Calculator()라는 객체를 만들어서 변수 c1에 담고 인스턴스화(구체적인 객체)한다. 변수의 데이터 타입은 클래스이다.</li>
+</ul>
+
+<p><strong>객체를 만든다는 것은 사용자 데이터타입을 만드는 것과 같다.</strong><br />
+<strong>객체 지향의 객체를 하나의 작은 프로그램처럼 느껴보자. 프로그램 안에 객체라는 작은 프로그램을 만드는 것이다.</strong></p>
+
+<h2 id="중첩-for문-연습--증가">중첩 for문 연습 (* 증가)</h2>
+<ul>
+  <li>좌측이 직각인 삼각형</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(int i=1; i&lt;5; i++) {
+	for(int j=1; j&lt;=i; j++) {
+		System.out.print("*");
+        	if(i == j) {
+		    System.out.println();
+		}
+	}		
+}
+
+//결과값
+*
+**
+***
+****
+</code></pre></div></div>
+
+<ul>
+  <li>우측이 직각인 삼각형</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(int i=1; i&lt;5; i++) {
+	for(int j=4; j&gt;0; j--) {
+		if(i &lt; j) {
+			System.out.print(" ");
+		} else {
+		    System.out.print("*");
+		    }
+		}
+		System.out.println();
+	    }
+    }
+}
+
+//결과값
+   *
+  **
+ ***
+****
+</code></pre></div></div>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><summary type="html"><![CDATA[객체 지향 프로그래밍 레고 블럭처럼 조립해서 하나의 프로그램을 만드는 것. 쉽게 말하면, 객체는 여러 목적을 가진 로직(변수와 메소드) 를 그룹핑한 것. 따라서 다른 곳에도 활용 가능해진다.(재활용성 ↑)]]></summary></entry><entry><title type="html">TIL-20-04-25</title><link href="http://localhost:4000/til/0425/" rel="alternate" type="text/html" title="TIL-20-04-25" /><published>2020-04-25T00:00:00+09:00</published><updated>2020-04-25T00:00:00+09:00</updated><id>http://localhost:4000/til/0425</id><content type="html" xml:base="http://localhost:4000/til/0425/"><![CDATA[<h1 id="공부할-것">공부할 것</h1>
+<p>메소드나 객제지향 개념을 차근차근 내 언어로 숙지할 것. 완벽히 숙지되지 않아서 클래스를 만들다 막히고,<br />
+자꾸 개념을 다시 찾아보게 된다.</p>
+<ul>
+  <li><strong>생활코딩 강의참조</strong></li>
+  <li>메소드와 객제지향 개념</li>
+  <li>클래스와 인스턴스와 객체</li>
+  <li>클래스 멤버와 인스턴스 멤버</li>
+  <li>유효범위</li>
+  <li>객체의 초기화와 생성자</li>
+  <li>접근제어자</li>
+  <li>다형성</li>
+</ul>
+
+<h1 id="배운-것">배운 것</h1>
+<h2 id="메소드">메소드</h2>
+<ul>
+  <li><strong>메소드 = 함수</strong> : 자바에서는 메소드라고 하고, 다른 언어에서는 함수라 부른다.</li>
+  <li>반목문, 조건문, 변수, 상수는 프로그래밍의 가장 중요한 기본 도구이다. <strong>메소드</strong>나 <strong>객체지향</strong>같은 개념들은
+크고 복잡한 프로젝트를 만드는 관리 도구이다.</li>
+</ul>
+
+<h3 id="메소드의-형식">메소드의 형식</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//### main 메소드 ###
+public static void main(String[] args) {
+    numbering();
+}
+</code></pre></div></div>
+
+<h3 id="메소드의-정의와-호출">메소드의 정의와 호출</h3>
+<ul>
+  <li>메소드를 만드는 것이 <strong>정의</strong>, 만들어진 메소드를 실행하는 것이 <strong>호출</strong></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//### 메소드의 정의 ###
+public static void numbering() {
+  int i = 0;
+  while (i &lt; 10) {
+    System.out.println(i);
+    i++;
+  }
+}
+
+//### 메소드의 호출 ###
+public static void main(String[] args) {
+        numbering();
+      }
+
+</code></pre></div></div>
+<ul>
+  <li>위 예제는 numbering이라는 이름의 메소드를 정의하고 있다. 이 메소드는 main이라는 이름의 메소드 안에서
+호출되고 있다. 메소드 numbering의 로직이 필요할 때 numbering();이라고 하면 메소드 numbering 로직이 실행된다.</li>
+</ul>
+
+<h3 id="main">main</h3>
+<ul>
+  <li>실행하고자하는 프로그램(로직)은 반드시 public static void main(String[] args)가 이끄는 중괄호 안에 위치시켜야 한다.</li>
+</ul>
+
+<h3 id="메소드가-없다면">메소드가 없다면</h3>
+<ul>
+  <li>메소드가 있으면 이미 정의된 로직을 <strong>재활용</strong>할 수 있다. (코드량 ↓ 유지보수 ↑)</li>
+</ul>
+
+<h3 id="입력과-출력">입력과 출력</h3>
+<ul>
+  <li>위에 살펴본 numbering이라는 메소드는 항상 똑같은 동작만을 반복한다. 재활용성으론 좋지만, 입력값에 따라 출력값을 달리 제공하면 더욱 쓸모있는 프로그램이 될 수 있다.</li>
+</ul>
+
+<h4 id="1-1-입력---매개변수와-인자">1-1. 입력 - 매개변수와 인자</h4>
+<ul>
+  <li>프로그래밍을 만들 땐 가변적인 것과 고정적인 것을 구분해야한다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//### 고정적인 메소드 ###
+public static void numbering(int limit) {
+        int i = 0;
+        while (i &lt; limit) {
+            System.out.println(i);
+            i++;
+        }
+    }
+ 
+ // ## 가변적인 메소드 ###
+    public static void main(String[] args) {
+        numbering(5);
+    }
+</code></pre></div></div>
+
+<ul>
+  <li>결과는 0부터 4까지 출력된다.즉, 입력을 통해 메소드의 동작을 제어하고 있다.</li>
+  <li>입력을 위한 두 가지 도구. <strong>매개변수(parameter)</strong> : 입력값을 수용하기 위한 변수가 정의된 부분. <strong>인자(argument)</strong> : 메소드를 호출할 때 전달된 값. 보통은 구분하지 않고 혼용해서 쓴다.</li>
+</ul>
+
+<h4 id="1-2-입력---복수의-인자">1-2. 입력 - 복수의 인자</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static void numbering() {
+    int limit = 5;
+    int i = 0;
+    while (i &lt; limit) {
+        System.out.println(i);
+        i++;
+    }
+}
+</code></pre></div></div>
+
+<ul>
+  <li>복수의 인자값을 갖고 싶다면 인자와 인자 사이를 콤마로 구분하고, 메소드를 정의할 때는 인자를 받을 매개 변수의 순서도 인자가 전달된 순서에 따라 배치함.</li>
+</ul>
+
+<h4 id="1-3-출력---return">1-3. 출력 - return</h4>
+<ul>
+  <li>메소드 밖으로 돌려준다는 뜻. return은 뒤에 따라오는 값을 메소드 결과로 반환한다.</li>
+  <li>반드시 return을 통해서 반환할 값의 데이터 형식을 메소드의 이름 옆에 명시해야한다.</li>
+  <li><strong>메소드를 읽는 Tip</strong> : 메소드의 사용 방법을 먼저 보고 전체적인 맥락을 파악한다. 입력과 출력값을 보면 어떤 용도인지 유추할 수 있다. 그리고나서 정의부를 본다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private static String numbering(int init, int limit) {
+		int i = init;
+		// 만들어지는 숫자들을 output이라는 변수에 담기 위해서 변수에 빈 값을 주었다.
+		String output = "";
+		while(i &lt;limit) {	
+			 // 숫자를 화면에 출력하는 대신 변수 output에 담았다.
+			output += i;
+			i++;
+		}
+		// 중요!!! output에 담겨 있는 문자열을 메소드 외부로 반환하려면 아래와 같이 return 키워드 뒤에 반환하려는 값을 배치하면 된다.
+		return output;
+	}
+	
+	public static void main(String[] args) {
+		// 메소드 numbering이 리턴한 값이 변수 result에 담긴다.
+		String result = numbering(1,5);
+		// 변수 result의 값을 화면에 출력한다.
+		System.out.println(result);
+	}
+</code></pre></div></div>
+
+<ul>
+  <li>return은 장단점이 있다. 까다롭고 코드량이 늘어날 수 있는 반면, 메소드가 리턴할 값을 명시함으로서 예측가능성을 높여준다. 장단점을 잘 파악해두면 적합한 프로그래밍을 할 수 있다.</li>
+</ul>
+
+<h4 id="1-4-왜-굳이-return을-쓰는가">1-4. 왜 굳이 return을 쓰는가?</h4>
+<ul>
+  <li>결론적으로 <strong>부품으로서 가치</strong>를 높이기 위해서이다.</li>
+  <li>숫자 프로그램이 있다면, 숫자를 출력하고 파일에 기록하고 이메일을 보내는 작업으로부터 숫자를 계산하는 로직을 분리하면 된다. 즉, 정의와 호출 역할을 명확히 분리할 수 있다.</li>
+  <li>부품처럼 누구든 어디든 쓰일 수 있다. 초기값과 마지막 값을 입력받고 반환만 하면 된다.</li>
+  <li><strong>return의 특성</strong> : 메소드를 중단시키는 역할.</li>
+</ul>
+
+<h4 id="1-5-출력---복수의-return">1-5. 출력 - 복수의 return</h4>
+<ul>
+  <li>메소드는 여러 개의 값을 가질 수 있는데, 여러 개의 값도 출력할 수 있다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private static String[] getMembers() {
+		String[] members = {"최진혁", "최유빈", "한아람"};
+		return members;
+	}
+	
+	public static void main(String[] args) {
+		String[] members = getMembers();
+	}
+</code></pre></div></div>
+
+<ul>
+  <li><strong>배열</strong>을 이용하면 된다. 메소드 getMembers가 리턴한 배열을 members 변수에 담았다. 여러 개의 인자를 콤마로 구분하지 않고도, 이 변수를 이용해 여러 개의 데이터 처리를 할 수 있다.</li>
+</ul>
+
+<h2 id="클래스-형변환">클래스 형변환</h2>
+<h2 id="참조">참조</h2>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><summary type="html"><![CDATA[공부할 것 메소드나 객제지향 개념을 차근차근 내 언어로 숙지할 것. 완벽히 숙지되지 않아서 클래스를 만들다 막히고, 자꾸 개념을 다시 찾아보게 된다. 생활코딩 강의참조 메소드와 객제지향 개념 클래스와 인스턴스와 객체 클래스 멤버와 인스턴스 멤버 유효범위 객체의 초기화와 생성자 접근제어자 다형성]]></summary></entry><entry><title type="html">TIL-20-04-23</title><link href="http://localhost:4000/til/0423/" rel="alternate" type="text/html" title="TIL-20-04-23" /><published>2020-04-23T00:00:00+09:00</published><updated>2020-04-23T00:00:00+09:00</updated><id>http://localhost:4000/til/0423</id><content type="html" xml:base="http://localhost:4000/til/0423/"><![CDATA[<h1 id="배운-것">배운 것</h1>
+<h2 id="캡슐화를-위한-private과-getter-setter-메소드">캡슐화를 위한 private과 Getter, Setter 메소드</h2>
+<h3 id="setter">Setter</h3>
+<ul>
+  <li>객체 지향 프로그래밍에서는 객체의 필드를 객체 외부에서 직접 접근하는 것을 막는다.</li>
+  <li><strong>Why?</strong> 외부에서 변경할 경우 객체의 무결성이 깨지기 때문. 따라서, 메소드를 통해 필드를 변경하는 방법을 선호</li>
+  <li>필드는 외부에서 접근할 수 없도록 막고(private) 메소드는 공개(public)</li>
+  <li><strong>Why?</strong> 메소드는 매개값을 검증해서 유효한 값만 객체의 필드로 저장할 수 있기 때문.</li>
+  <li>이러한 역할을 하는 메소드가 <strong>Setter</strong></li>
+</ul>
+
+<h3 id="getter">Getter</h3>
+<ul>
+  <li>외부에서 객체의 데이터를 읽을 때도 메소드를 사용하는 것이 좋음</li>
+  <li>메소드로 필드값을 가공한 후 외부로 전달하면 되는데 이 메소드가 <strong>Getter</strong></li>
+</ul>
+
+<p><strong>클래스를 선언할 때 필드를 private로 선언해서 외부로부터 보호하고, 필드에 대한 Setter와 Getter를 작성해서 필드값을 안전하게 변경/사용하는 것이 좋다.</strong></p>
+
+<ul>
+  <li>생성자 오버로딩</li>
+</ul>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><summary type="html"><![CDATA[배운 것 캡슐화를 위한 private과 Getter, Setter 메소드 Setter 객체 지향 프로그래밍에서는 객체의 필드를 객체 외부에서 직접 접근하는 것을 막는다. Why? 외부에서 변경할 경우 객체의 무결성이 깨지기 때문. 따라서, 메소드를 통해 필드를 변경하는 방법을 선호 필드는 외부에서 접근할 수 없도록 막고(private) 메소드는 공개(public) Why? 메소드는 매개값을 검증해서 유효한 값만 객체의 필드로 저장할 수 있기 때문. 이러한 역할을 하는 메소드가 Setter]]></summary></entry><entry><title type="html">TIL 20-04-22</title><link href="http://localhost:4000/til/0422/" rel="alternate" type="text/html" title="TIL 20-04-22" /><published>2020-04-22T00:00:00+09:00</published><updated>2020-04-22T00:00:00+09:00</updated><id>http://localhost:4000/til/0422</id><content type="html" xml:base="http://localhost:4000/til/0422/"><![CDATA[<h1 id="java">JAVA</h1>
+<h2 id="배운-것">배운 것</h2>
+<ul>
+  <li>class, variable, this, printInfo, setter, getter, private, new 생성자</li>
+</ul>
+
+<h2 id="배울-것">배울 것</h2>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><summary type="html"><![CDATA[JAVA 배운 것 class, variable, this, printInfo, setter, getter, private, new 생성자]]></summary></entry><entry><title type="html">TIL-20-04-17</title><link href="http://localhost:4000/til/0417/" rel="alternate" type="text/html" title="TIL-20-04-17" /><published>2020-04-17T00:00:00+09:00</published><updated>2020-04-17T00:00:00+09:00</updated><id>http://localhost:4000/til/0417</id><content type="html" xml:base="http://localhost:4000/til/0417/"><![CDATA[<h1 id="싱글톤">싱글톤</h1>
+<ul>
+  <li>전체 프로그램에서 단 하나의 객체만 만들도록 보장해야 하는 경우, 이 객체를 <strong>싱글톤</strong>이라고 함.</li>
+  <li>클래스 외부에서 new 연산자로 생성자를 호출할 수 없도록 생성자 앞에 <strong>private</strong> 붙여줌</li>
+  <li>자신의 타입인 정적 필드를 하나 선언하고, 자신의 객체를 생성해 초기화</li>
+  <li>대신 외부에서 호출할 수 있는 정적 메소드인 <strong>getInstance()</strong> 를 선언하고,</li>
+  <li>정적 필드에서 참조하고 있는 자신의 객체를 <strong>리턴</strong></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class 클래스 {
+  //정적 필드
+  private static 클래스 singleton = new 클래스();
+  
+  //생성자
+  private 클래스() {}
+  
+  //정적 메소드
+  static 클래스 getInstance() {
+    return singleton;
+    }
+} 
+</code></pre></div></div>
+
+<ul>
+  <li>외부에서 객체를 얻는 유일한 방법은 <strong>getInstance()</strong> 메소드</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스 변수1 = 클래스.getInstance();
+클래스 변수2 = 클래스.getInstance();
+</code></pre></div></div>
+
+<h1 id="final-필드와-상수">final 필드와 상수</h1>
+<h2 id="final-필드">final 필드</h2>
+<ul>
+  <li>final 필드는 초기값이 저장되면 최종적인 값이 되어서 프로그램 실행 도중에 수정 불가
+    <h3 id="final-필드의-초기값-주는-방법">final 필드의 초기값 주는 방법</h3>
+    <p>1) 단순 값일 경우 필드 선언 시에 초기화(주로 정적 필드(상수)일 경우)
+2) 객체 생성 시에 외부 데이터로 초기화 필요한 경우 생성자에서 초기화(인스턴스 필드의 경우)</p>
+  </li>
+</ul>
+
+<h3 id="인스턴스-final-필드">인스턴스 final 필드</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>final 타입 필드 [= 초기값];
+</code></pre></div></div>
+
+<h3 id="정적-final-필드">정적 final 필드</h3>
+<ul>
+  <li>불변의 값인 <strong>상수</strong>를 만들 경우 ex)파이나 지구의 무게 및 둘레 등</li>
+  <li>상수는 객체마다 저정할 필요가 없는 공용성을 띄고 있어서 <strong>static final 필드</strong>로 선언</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static final 타입 상수 = 초기값;
+</code></pre></div></div>
+
+<ul>
+  <li>상수 이름은 대문자로 작성하는 것이 관례. 혼합된 이름은 언더바(_)로 단어를 연결.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static final double PI = 3.14159;
+static final double EARTH_RADIUS = 6400;
+static final double EARTH_AREA = 4 * Math.PI * EARTH_RADIUS * EARTH_RADIUS;
+</code></pre></div></div>
+
+<h1 id="용어-마무리">용어 마무리</h1>
+<ul>
+  <li><strong>인스턴스 멤버</strong> : 객체(인스턴스)를 생성한 후 사용할 수 있는 필드와 메소드. 각각 인스턴스 필드, 인스턴스 메소드라 부름</li>
+  <li><strong>this</strong> : 객체 내부에서도 인스턴스 멤버에 접근하기 위해 this를 사용할 수 있음. 생성자와 메소드의 매개 변수 이름이 같을 때, 인스턴스 멤버인
+필드임을 명시할 때 사용.</li>
+  <li><strong>정적 멤버</strong> : 클래스에 고정된 멤버로서 객체를 생성하지 않고 사용할 수 있는 필드와 메소드</li>
+  <li><strong>static</strong> : 정적 멤버를 선언할 때 사용하는 키워드</li>
+  <li><strong>싱글톤</strong> : 전체 프로그램에서 단 하나의 객체만 만들도록 보장할 때, 이 객체를 싱글톤이라고 함.</li>
+  <li><strong>final 필드</strong> : 초기값이 저장되면 최종적인 값이 되어서 프로그램 실행 도중에 수정할 수 없는 필드</li>
+  <li><strong>상수</strong> : 수학에서 사용되는 불변의 값을 저정하는 필드를 자바에서는 상수라고 함. final static 키워드로 선언</li>
+</ul>]]></content><author><name>bokyoung shin</name></author><category term="TIL" /><summary type="html"><![CDATA[싱글톤 전체 프로그램에서 단 하나의 객체만 만들도록 보장해야 하는 경우, 이 객체를 싱글톤이라고 함. 클래스 외부에서 new 연산자로 생성자를 호출할 수 없도록 생성자 앞에 private 붙여줌 자신의 타입인 정적 필드를 하나 선언하고, 자신의 객체를 생성해 초기화 대신 외부에서 호출할 수 있는 정적 메소드인 getInstance() 를 선언하고, 정적 필드에서 참조하고 있는 자신의 객체를 리턴]]></summary></entry></feed>
