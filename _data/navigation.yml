@@ -19,3 +19,8 @@ sidebar-category:
       - title: "springboot 게시판 서비스 만들기"
         url: /fastcampus-project-board/
         category: "fastcampus-project-board"
+  - title : Study
+    children:
+      - title: "알고리즘 문제 풀이"
+        url: /algorithm-explanation/
+        category: "algorithm-explanation"
