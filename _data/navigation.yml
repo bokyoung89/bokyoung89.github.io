@@ -13,9 +13,8 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
 
-docs:
+sidebar-category:
   - title: Project
     children:
       - title: "springboot를 활용한 게시판 서비스 만들기"
-        url: fastcampus-project-board/
-        category: "fastcampus-project-board"
+        url: /fastcampus-project-board/

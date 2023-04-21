@@ -1,7 +1,7 @@
 ---
 title: "springboot를 활용한 게시판 서비스 만들기"
 layout: archive
-permalink: categories/fastcampus-project-board
+permalink: /fastcampus-project-board/
 author_profile: true
 sidebar:
 nav: "docs"
