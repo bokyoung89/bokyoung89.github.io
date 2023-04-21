@@ -4,7 +4,7 @@ layout: archive
 permalink: /algorithm-explanation/
 author_profile: true
 sidebar:
-nav: "sidebar-category"
+    nav: "sidebar-category"
 ---
 
 {% assign posts = site.categories.algorithm-explanation %}
