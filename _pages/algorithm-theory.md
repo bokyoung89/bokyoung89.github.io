@@ -4,7 +4,7 @@ layout: archive
 permalink: /algorithm-theory/
 author_profile: true
 sidebar:
-nav: "algorithm-theory"
+    nav: "sidebar-category"
 ---
 
 {% assign posts = site.categories.algorithm-theory %}
