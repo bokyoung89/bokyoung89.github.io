@@ -27,3 +27,8 @@ sidebar-category:
       - title : "알고리즘 이론"
         url: /algorithm-theory/
         category: "algorithm-theory"
+  - title: DB
+    children:
+      - title: "SQL 이론"
+        url: /sql-explanation/
+        category: "sql-explanation"
