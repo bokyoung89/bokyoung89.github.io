@@ -14,6 +14,11 @@ main:
   #   url: /sitemap/
 
 sidebar-category:
+  - title: Category
+    children:
+      - title: "SpringBoot"
+        url: /SpringBoot/
+        category: "SpringBoot"
   - title: Project
     children:
       - title: "springboot 게시판 서비스 만들기"
