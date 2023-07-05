@@ -19,21 +19,15 @@ sidebar-category:
       - title: "SpringBoot"
         url: /SpringBoot/
         category: "SpringBoot"
-  - title: Project
-    children:
-      - title: "springboot 게시판 서비스 만들기"
-        url: /fastcampus-project-board/
-        category: "fastcampus-project-board"
-  - title : Study
-    children:
-      - title: "알고리즘 문제 풀이"
-        url: /algorithm-explanation/
-        category: "algorithm-explanation"
-      - title : "알고리즘 이론"
-        url: /algorithm-theory/
-        category: "algorithm-theory"
-  - title: DB
-    children:
-      - title: "SQL 이론"
+      - title: "JPA"
+        url: /JPA/
+        category: "JPA"
+      - title: "AWS"
+        url: /AWS/
+        category: "AWS"
+      - title: "SQL"
         url: /sql-explanation/
         category: "sql-explanation"
+      - title: "algorithm"
+        url: /algorithm-explanation/
+        category: "algorithm-explanation"
