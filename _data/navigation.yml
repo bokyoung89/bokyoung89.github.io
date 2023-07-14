@@ -31,3 +31,9 @@ sidebar-category:
       - title: "algorithm"
         url: /algorithm-explanation/
         category: "algorithm-explanation"
+
+  - title: Project
+    children:
+      - title: "springboot 게시판 서비스"
+        url: /springboot-board-project/
+        category: "springboot-board-project"
