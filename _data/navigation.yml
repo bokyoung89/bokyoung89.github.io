@@ -31,6 +31,9 @@ sidebar-category:
       - title: "algorithm"
         url: /algorithm-explanation/
         category: "algorithm-explanation"
+      - title: "Git"
+        url: /Git/
+        category: "Git"
 
   - title: Project
     children:
