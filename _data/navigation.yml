@@ -22,6 +22,9 @@ sidebar-category:
       - title: "JPA"
         url: /JPA/
         category: "JPA"
+      - title: "Java"
+        url: /Java
+        category: "Java"
       - title: "AWS"
         url: /AWS/
         category: "AWS"
