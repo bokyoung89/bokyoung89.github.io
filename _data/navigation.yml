@@ -16,9 +16,9 @@ main:
 sidebar-category:
   - title: Category
     children:
-      - title: "SpringBoot"
-        url: /SpringBoot/
-        category: "SpringBoot"
+      - title: "Spring"
+        url: /Spring/
+        category: "Spring"
       - title: "JPA"
         url: /JPA/
         category: "JPA"
