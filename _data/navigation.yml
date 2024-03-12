@@ -28,6 +28,9 @@ sidebar-category:
       - title: "AWS"
         url: /AWS/
         category: "AWS"
+#      - title: "TDD"
+#        url: /TDD/
+#        category: "TDD"
       - title: "SQL"
         url: /sql-explanation/
         category: "sql-explanation"
@@ -40,6 +43,9 @@ sidebar-category:
 
   - title: Project
     children:
-      - title: "springboot 게시판 서비스"
-        url: /springboot-board-project/
-        category: "springboot-board-project"
+#      - title: "springboot 게시판 서비스"
+#        url: /springboot-board-project/
+#        category: "springboot-board-project"
+      - title: "대규모 트래픽에 대비한 예약 구매 서비스"
+        url: /pre-order-service/
+        category: "pre-order-service"
