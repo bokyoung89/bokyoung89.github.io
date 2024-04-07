@@ -18,6 +18,9 @@ main:
 sidebar-category:
   - title: Category
     children:
+      - title: "Today I Learned"
+        url: /TIL/
+        category: "TIL"
       - title: "Spring"
         url: /Spring/
         category: "Spring"
