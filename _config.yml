@@ -110,7 +110,7 @@ analytics:
 # Site Author
 author:
   name             : "bokyoung shin"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : # path of avatar image, e.g. "/images/bio-photo.jpg"
   bio              : "since 2019."
   location         : "Seuol, South Korea"
   email            :
