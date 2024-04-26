@@ -51,6 +51,5 @@ sidebar-category:
 #      - title: "springboot 게시판 서비스"
 #        url: /springboot-board-project/
 #        category: "springboot-board-project"
-      - title: "대규모 트래픽에 대비한 예약 구매 서비스"
+      - title: "| 대규모 시스템 설계/구현"
         url: /pre-order-service/
-        category: "pre-order-service"
