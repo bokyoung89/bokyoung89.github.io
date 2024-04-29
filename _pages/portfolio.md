@@ -13,7 +13,7 @@ classes: wide
 ### 2024
 <hr>
 
-**[대규모 트래픽에 대비한 예약구매 서비스 (2024.01.~2024.02.)](https://bokyoung89.github.io/projects/pre-order-service/)**
+**[대규모 트래픽에 대비한 예약구매 서비스 (2024.01.~2024.02.)](https://bokyoung89.github.io/pre-order-service/0429/)**
 
 ### 2023
 <hr>
