@@ -1,15 +1,15 @@
 # main links
 main:
-  - title : "Category"
+  - title: "ABOUT"
+    url: /about/
+  - title : "CATEGORY"
     url : /categories/
-  - title : "Tag"
+  - title : "TAG"
     url : /tags/
-  - title: "Search"
+  - title: "PROJECTS"
+    url: /projects/
+  - title: "SEARCH"
     url : /search/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
