@@ -6,12 +6,10 @@ main:
     url : /categories/
   - title : "TAG"
     url : /tags/
-  - title: "PROJECTS"
-    url: /projects/
+  - title: "PORTFOLIO"
+    url: /portfolio/
   - title: "SEARCH"
     url : /search/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
 
