@@ -18,8 +18,8 @@ classes: wide
 ### 2023
 <hr>
 
-**[상비약 판매 편의점 추천 서비스(2023.07.~2023.09)](https://github.com/bokyoung89/work-board-project)**
+**[상비약 판매 편의점 추천 서비스(2023.07.~2023.09)](https://github.com/bokyoung89/Pharmacy-Recommendation-Version-Management)**
 
-**[요리조리 커뮤니티 프로젝트(2023.06.~2023.09)](https://github.com/bokyoung89/Pharmacy-Recommendation-Version-Management)**
+**[요리조리 커뮤니티 프로젝트(2023.06.~2023.09)](https://github.com/bokyoung89/work-board-project)**
 
 
