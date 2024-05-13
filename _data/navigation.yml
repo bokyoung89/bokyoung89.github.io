@@ -43,6 +43,9 @@ sidebar-category:
       - title: "Git"
         url: /Git/
         category: "Git"
+      - title: "Network"
+        url: /Network/
+        category: "Network"
 
   - title: Project
     children:
