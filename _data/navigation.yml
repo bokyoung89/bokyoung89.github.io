@@ -46,6 +46,9 @@ sidebar-category:
       - title: "Network"
         url: /Network/
         category: "Network"
+      - title: "Books"
+        url: /Books/
+        category: "Books"
 
   - title: Project
     children:
